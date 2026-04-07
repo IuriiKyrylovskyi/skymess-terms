@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKYMESS Terms of Service</title>
+    <style>
+      :root {
+        --bg-gradient: linear-gradient(180deg, #aaddff 0%, #ffffff 100%);
+        --accent-blue: #4a9eff;
+        --text-dark: #2c3e50;
+        --text-muted: #5a7d9a;
+        --card-bg: rgba(255, 255, 255, 0.2);
+        --border-color: #d1e8ff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: var(--bg-gradient);
+        background-attachment: fixed;
+        color: var(--text-dark);
+        line-height: 1.7;
+        padding: 2rem 1rem;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      /* Animated Plane Background */
+      .plane-asset {
+        position: fixed;
+        z-index: -1;
+        opacity: 0.2;
+        pointer-events: none;
+        filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.1));
+      }
+
+      @keyframes flyRight {
+        from {
+          /* transform: translate(-15vw, 0) rotate(var(--rot)); */
+          transform: translate(-15vw, 0);
+        }
+        to {
+          /* transform: translate(115vw, -5vh) rotate(var(--rot)); */
+          transform: translate(115vw, -5vh);
+        }
+      }
+
+      @keyframes flyLeft {
+        from {
+          /* transform: translate(115vw, 0) rotate(var(--rot)); */
+          transform: translate(115vw, 0) rotate(180deg);
+        }
+        to {
+          /* transform: translate(-15vw, 5vh) rotate(var(--rot)); */
+          transform: translate(-15vw, 5vh) rotate(180deg);
+        }
+      }
+
+      .p-blue {
+        top: 10%;
+        width: 80px;
+        /* --rot: 10deg; */
+        animation: flyRight 35s linear infinite;
+      }
+      .p-red {
+        top: 25%;
+        width: 60px;
+        /* --rot: 190deg; */
+        animation: flyLeft 25s linear infinite;
+        animation-delay: 2s;
+      }
+      .p-orange {
+        top: 45%;
+        width: 90px;
+        /* --rot: 15deg; */
+        animation: flyRight 45s linear infinite;
+        animation-delay: 5s;
+      }
+      .p-violet {
+        top: 65%;
+        width: 70px;
+        /* --rot: 170deg; */
+        animation: flyLeft 32s linear infinite;
+      }
+      .p-green {
+        top: 80%;
+        width: 50px;
+        /* --rot: -5deg; */
+        animation: flyRight 38s linear infinite;
+        animation-delay: 1s;
+      }
+
+      .container {
+        max-width: 720px;
+        margin: 0 auto;
+        background: var(--card-bg);
+        backdrop-filter: blur(10px);
+        padding: 2.5rem;
+        border-radius: 24px;
+        box-shadow: 0 10px 30px rgba(74, 158, 255, 0.1);
+        border: 1px solid var(--border-color);
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .logo {
+        font-size: 2rem;
+        letter-spacing: 0.3em;
+        color: var(--accent-blue);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .tagline {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+        color: var(--text-dark);
+        margin-bottom: 0.4rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+        color: var(--accent-blue);
+        margin: 2rem 0 0.8rem;
+        padding-bottom: 0.3rem;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      p {
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+      }
+
+      ul {
+        margin: 0.5rem 0 1rem 1.5rem;
+        color: var(--text-dark);
+      }
+
+      ul li {
+        margin-bottom: 0.4rem;
+      }
+
+      .updated {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+      }
+
+      .highlight-box {
+        background: rgba(74, 158, 255, 0.05);
+        border: 1px solid var(--border-color);
+        border-left: 3px solid var(--accent-blue);
+        border-radius: 6px;
+        padding: 1rem 1.2rem;
+        margin: 1rem 0;
+      }
+
+      .highlight-box p {
+        margin: 0;
+        font-size: 0.95rem;
+      }
+
+      .table-container {
+        overflow-x: auto;
+        margin: 1rem 0;
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+        min-width: 450px;
+      }
+
+      th {
+        background: #f0f7ff;
+        color: var(--accent-blue);
+        padding: 0.6rem 1rem;
+        text-align: left;
+        border: 1px solid var(--border-color);
+      }
+
+      td {
+        padding: 0.6rem 1rem;
+        border: 1px solid var(--border-color);
+        color: var(--text-dark);
+      }
+
+      tr:nth-child(even) td {
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      a {
+        color: var(--accent-blue);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 1.5rem;
+          border-radius: 16px;
+        }
+        .plane-asset {
+          opacity: 0.1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img src="2-blue.png" class="plane-asset p-blue" alt="" />
+    <img src="2-red.png" class="plane-asset p-red" alt="" />
+    <img src="2-orange.jpg" class="plane-asset p-orange" alt="" />
+    <img src="2-violet.png" class="plane-asset p-violet" alt="" />
+    <img src="2-green.jpg" class="plane-asset p-green" alt="" />
+
+    <div class="container">
+      <header>
+        <div class="logo">SKYMESS</div>
+        <div class="tagline">Air Traffic Control Game</div>
+        <div class="logo">✈</div>
+      </header>
+
+      <h1>SKYMESS Terms of Service</h1>
+      <p>Last updated: April 2026</p>
+
+      <div class="highlight-box">
+        <p>
+          SKYMESS is designed with privacy in mind. We do not collect your name, email address, or
+          any personal information. You play anonymously.
+        </p>
+      </div>
+
+      <h2>1. Acceptance of Terms</h2>
+      <p>By using SKYMESS, you agree to these Terms of Service.</p>
+
+      <h2>2. In-App Purchases</h2>
+      <p>One-time purchases are final and non-refundable except as required by law.</p>
+
+      <h2>3. User Accounts</h2>
+      <p>
+        We use anonymous accounts via Supabase. No personal data is collected beyond purchase
+        records.
+      </p>
+
+      <p>
+        For privacy questions, contact us at:
+        <strong><a href="mailto:yurii.kyrylovskyi@gmail.com">skymess.privacy@gmail.com</a></strong>
+      </p>
+
+      <footer>
+        <p>© 2026 BLUESky. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
